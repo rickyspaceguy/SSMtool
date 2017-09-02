@@ -1,10 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                 Automated Computation of Autonomous               %
-%	        Spectral Submanifolds for Nonlinear Modal Analysis        %
-%                                                                   %
-%              Sten Ponsioen & George Haller (ETH Zurich)           %                                 
-%                                                                   %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Automated Computation of Autonomous Spectral Submanifolds for Nonlinear Modal Analysis
+-----------------------------------------------------------------------------  
+Sten Ponsioen & George Haller (ETH Zurich) 
 
 License:
 
