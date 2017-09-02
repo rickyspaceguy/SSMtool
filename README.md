@@ -29,9 +29,6 @@ References
     submanifolds: existence, uniqueness and use in model reduction.
     Nonlinear Dynamics, 86(3):1493–1534, (2016).
 
------------------------------------------------------------------------------
-
-
 Installation notes 
 -----------------------------------------------------------------------------
 Tested on MATLAB R2016b.
