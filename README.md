@@ -34,9 +34,9 @@ Installation notes
 Tested on MATLAB R2016b.
 
 1) After you unzipped the files to mydir, 
-   put the Current Directory in Matlab to mydir. 
+   put the Current Directory in MATLAB to mydir. 
 
-2) In the Matlab command prompt,
+2) In the MATLAB command prompt,
    type “SSM” to open the graphical user interface.
 
 
