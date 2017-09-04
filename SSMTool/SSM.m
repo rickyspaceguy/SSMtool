@@ -55,9 +55,14 @@ function SSM_OpeningFcn(hObject, eventdata, handles, varargin)
     clc
     warning('off', 'symbolic:sym:sym:DeprecateExpressions')
     
-    addpath(strcat(pwd,'/Data/'));
-    rmpath(genpath(strcat(pwd,'/Data/')));
-    addpath(genpath(strcat(pwd,'/Data')));
+    if exist(strcat(pwd,'/Data'),'dir')==7
+        addpath(strcat(pwd,'/Data/'));
+        rmpath(genpath(strcat(pwd,'/Data/')));
+        addpath(genpath(strcat(pwd,'/Data/')));
+    else
+        mkdir(strcat(pwd,'/Data'))
+        addpath(strcat(pwd,'/Data'))
+    end
     
     handles.plot.xmin = str2num(get(handles.plot_xmin,'String'));
     handles.plot.xmax = str2num(get(handles.plot_xmax,'String'));
@@ -663,7 +668,10 @@ function push_compute_Callback(hObject, eventdata, handles)
             pp2 = gcp('nocreate');
             cpuNum =pp2.NumWorkers;
             save('cluster_info.mat','cpuNum')
-            close(h)
+            
+            if isvalid(h)
+                close(h)
+            end
         end
         
 
