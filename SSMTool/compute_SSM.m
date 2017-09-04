@@ -98,6 +98,7 @@ disp(' ')
 disp('------------------   Computing W(z) and R(z)   ------------------- ')
 disp(' ')
 for n=2:order
+    tic
     fprintf('Solving order: %d \n',n)
     hwait=updatewaitbar(hwait,n,order);
     free_dofs = 1:sys_dim*2^n;
@@ -163,6 +164,7 @@ for n=2:order
     K_n_vec_full(free_dofs) = cat(1,sol_con{:});
     K_n = reshape(K_n_vec_full,[sys_dim,2^n]);
     K{n} = K_n;
+    toc
     disp(' ')
 end
 disp('Done.')
