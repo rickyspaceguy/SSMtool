@@ -10,10 +10,19 @@ if rank(Xmode) < size(A,1)
 end
 
 if conservative 
-    [~,k] = sort(double(abs(imag(lambda))),'ascend');
+    lambda_neg = lambda(imag(lambda)<0);
+    [~,k_neg] = sort(abs(double(lambda_neg)),'ascend');
+    lambda_neg_sort =  lambda_neg(k_neg);
+    
+    lambda_pos  = lambda(imag(lambda)>0);
+    [~,k_pos] = sort(double(lambda_pos),'ascend');
+    lambda_pos_sort =  lambda_pos(k_pos);
+    
+    lambda_or = reshape([lambda_pos_sort, lambda_neg_sort].',[],1);
+    [~,k] = ismember(lambda_or,lambda);
 else
-    col  = [real(lambda),imag(lambda)];
-    [~,k]= sortrows(double(col),[-1,-2]);
+    col   = [real(lambda),imag(lambda)];
+    [~,k] = sortrows(double(col),[-1,-2]);
 end
 
 T = Xmode(:,k);
